@@ -30,7 +30,7 @@ class weathericons:
         emojis = {
             "clear-day" : u"\U00002600",
             "clear-night" : u"\U00002600",#u"\U0001F303",
-            "rain" : u"\U0001F327",
+            "rain" : u"\U00002614",
             "snow" : u"\U00002744",
             #"sleet" : u"",
             "wind" : u"\U0001F4A8",
