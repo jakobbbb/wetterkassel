@@ -29,27 +29,14 @@ class weathericons:
     def emoji(icon):
         emojis = {
             "clear-day" : u"\U00002600",
-            "clear-night" : u"\U00002600",#u"\U0001F303",
+            "clear-night" : u"\U00002600",
             "rain" : u"\U00002614",
             "snow" : u"\U00002744",
-            #"sleet" : u"",
             "wind" : u"\U0001F4A8",
             "fog" : u"\U0001F301",
             "cloudy" : u"\U00002601",
             "partly-cloudy-day" : u"\U000026C5",
-            "partly-cloudy-night" : u"\U000026C5"#u"\U00002601\U0001F319"
-        }
-        emojis_dev = { # for testing these emoji substitus can be used to avoid endcoding issues
-            "clear-day" : "(sun)",
-            "clear-night" : "(moon)",
-            "rain" : ";;;",
-            "snow" : "***",
-            #"sleet" : u"",
-            "wind" : "-->",
-            "fog" : "~~~",
-            "cloudy" : "000",
-            "partly-cloudy-day" : "(s)00",
-            "partly-cloudy-night" : "(m)00"
+            "partly-cloudy-night" : u"\U000026C5"
         }
         if icon in emojis.keys():
             return emojis[icon]

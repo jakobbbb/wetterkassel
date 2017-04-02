@@ -3,11 +3,12 @@ from twitter.twitter_utils import calc_expected_status_length as st_len
 
 class tweetbuild:
     def __init__(self, data, tweettime):
-        self.data = data
-        self.tweettime = tweettime
+        self.data = data # weather data
+        self.tweettime = tweettime # 0 for todays weather, 1 for tomorrow
         self.tweettext = ""
-    
-    def add(self, addition):
+
+    # appends string to tweettext while keeping length <= 140 chars
+    def add(self, addition): 
         if (st_len((self.tweettext + addition).encode("utf-8")) <= 140):
             self.tweettext += addition
             return True
@@ -15,7 +16,6 @@ class tweetbuild:
             return False
 
     def build(self):
-        #return "Tweet!"
         if self.tweettime == 0:
              self.add("Heute: ")
         else:
@@ -24,6 +24,7 @@ class tweetbuild:
         self.add( self.data["summary"].strip("."))
         self.add(" " + WetterKassel.weathericons.emoji(self.data["icon"]) + ". ")
         self.add("Wind: " + str(int(round(self.data["windSpeed"],0))) + "km/h. ")
+        # use abbreviations if needed
         if not self.add("Luftfeuchtigkeit: " + str(int(round(self.data["humidity"]*100,0))) + "%. "):
             self.add("Luftf.: " + str(int(round(self.data["humidity"]*100,0))) + "%. ")
         if not self.add("Regenwahrscheinlichkeit: " + str(int(round(self.data["precipProbability"]*100,0))) + "%. "):

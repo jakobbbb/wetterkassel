@@ -1,5 +1,6 @@
 import twitter
 from WetterKassel import config
+
 class twitterapi:
     def __init__(self):
         self.consumer_key = config.twitterapi.consumer_key
@@ -20,7 +21,5 @@ class twitterapi:
         try:
             status = self.api.PostUpdate(message)
         except UnicodeDecodeError:
-            #print "Your message could not be encoded.  Perhaps it contains non-ASCII characters? "
-            #print "Try explicitly specifying the encoding with the --encoding flag"
+            print "[-] Unicode Decode Error!"
             sys.exit(2)
-        #print "%s just posted: %s" % (status.user.name, status.text)
