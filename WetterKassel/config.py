@@ -1,8 +1,7 @@
 # This is the configuration file for WetterKassel
-# Add your keys here and rename this file to 'config.py'
 
 class config:
-    # (mostly) empty default config
+    # empty config structure
     config = {
         "weatherapi" : {
             "key" : "",
