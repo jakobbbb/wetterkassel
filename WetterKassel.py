@@ -23,7 +23,7 @@ def main():
             WetterKassel.config.config = loads(f.read())
     else:
         # generate empty config, exit
-        print "[i] no config found, generating empty config"
+        print >> stderr, "[-] no config found, generating empty config"
         with open(configfile, "w+") as f:
             f.write(dumps(WetterKassel.config.config, sort_keys=True, indent=4))
         exit()

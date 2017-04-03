@@ -22,5 +22,5 @@ class twitterapi:
         try:
             status = self.api.PostUpdate(message)
         except UnicodeDecodeError:
-            print "[-] Unicode Decode Error!"
+            print >> stderr, "[-] Unicode Decode Error!"
             sys.exit(2)
