@@ -3,13 +3,13 @@ import requests
 
 class weatherapi:
     def __init__(self):
-        pass
+        self.config = config.config["weatherapi"]
        
     def url(self):
         url = "https://api.darksky.net/forecast/" #base url
-        url += config.weatherapi.key
-        url += "/" + config.weatherapi.lat + "," + config.weatherapi.lon + "/?"
-        for param, value in config.weatherapi.params.iteritems():
+        url += self.config["key"]
+        url += "/" + self.config["lat"] + "," + self.config["lon"] + "/?"
+        for param, value in self.config["params"].iteritems():
             url += "&%s=%s" % (param, value)
         return url
 

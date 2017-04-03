@@ -3,11 +3,12 @@ from WetterKassel import config
 
 class twitterapi:
     def __init__(self):
-        self.consumer_key = config.twitterapi.consumer_key
-        self.consumer_secret = config.twitterapi.consumer_secret
-        self.access_key = config.twitterapi.access_key
-        self.access_secret = config.twitterapi.access_secret
-        self.encoding = config.twitterapi.encoding
+        self.config = config.config["twitterapi"]
+        self.consumer_key = self.config["consumer_key"]
+        self.consumer_secret = self.config["consumer_secret"]
+        self.access_key = self.config["access_key"]
+        self.access_secret = self.config["access_secret"]
+        self.encoding = self.config["encoding"]
 
         self.api = twitter.Api(
             consumer_key=self.consumer_key, 
