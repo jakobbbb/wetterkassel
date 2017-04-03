@@ -17,7 +17,7 @@ def main():
         exit(1)
 
     # configuration
-    configfile = "config.json"
+    configfile = path.join(path.dirname(path.abspath(__file__)), "config.json")
     if path.isfile(configfile):
         with open(configfile, "r") as f:
             WetterKassel.config.config = loads(f.read())
