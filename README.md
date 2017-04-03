@@ -21,3 +21,10 @@ python WetterKassel.py tomorrow # tomorrow's forecast
 
 ## Configuring
 On the first run 'config.json' is generated and can be edited to configure WetterKassel.
+
+## Sample Crontab
+```cron
+MAILTO=user@example.com
+0 19 * * * /usr/bin/python /home/user/wetterkassel/WetterKassel.py tomorrow >> /home/user/wetterkassel/wetterkassel.log
+0 7 * * * /usr/bin/python /home/user/wetterkassel/WetterKassel.py today >> /home/user/wetterkassel/wetterkassel.log
+```
