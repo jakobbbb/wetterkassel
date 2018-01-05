@@ -1,0 +1,4 @@
+0.0.2
+    add support for 280 chars if python-twitter 3.3.1 or higher is used
+0.0.1
+    first version
