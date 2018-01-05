@@ -1,5 +1,7 @@
 import WetterKassel
 from twitter.twitter_utils import calc_expected_status_length as st_len
+import twitter.api
+LIMIT = twitter.api.CHARACTER_LIMIT # 280 from 3.3.1 onwards
 
 class tweetbuild:
     def __init__(self, data, tweettime):
@@ -7,9 +9,9 @@ class tweetbuild:
         self.tweettime = tweettime # 0 for todays weather, 1 for tomorrow
         self.tweettext = ""
 
-    # appends string to tweettext while keeping length <= 140 chars
+    # appends string to tweettext while keeping length <= LIMIT
     def add(self, addition): 
-        if (st_len((self.tweettext + addition).encode("utf-8")) <= 140):
+        if (st_len((self.tweettext + addition).encode("utf-8")) <= LIMIT):
             self.tweettext += addition
             return True
         else:
